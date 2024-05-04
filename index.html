@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.454a5b5a.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+    <title>
+      Chord Ace - Piano and Music Theory Online Teaching Tool - See Chords as
+      You Play Them
+    </title>
+    <meta
+      name="description"
+      content="Play your MIDI-piano and see what chords you are playing. Great teaching and learning tool for piano and music theory."
+    />
+    <script type="module" crossorigin src="script.js"></script>
+    <link rel="modulepreload" href="preload.js">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="popup">
+      <h2>Before you begin...</h2>
+      <p>
+        ChordAce works best in Google Chrome and Opera. If you can't get your
+        midi keyboard to work, try using one of those browsers.
+      </p>
+      <p>
+        If you don't have a midi-keyboard connected you can use your computers
+        keyboard, but a midi keyboard is recommended.
+      </p>
+      <p>
+        This app is made by
+        <a href="https://www.youtube.com/c/musicandcoding" target="_blank"
+          >Morten Vestergaard</a
+        > and <a href="https://webfar.dk/" target="_blank">Webfar</a>
+        using Vanilla JavaScript with
+        <a href="https://github.com/tonaljs/tonal" target="_blank">Tonal.js</a>,
+        <a href="https://howlerjs.com/" target="_blank">Howler.js</a> and
+        <a href="https://www.vexflow.com/" target="_blank">VexFlow.</a>
+      </p>
+      <p>Have fun learning and teaching!</p>
+      
+      <button class="close-popup">Begin!</button>
+    </div>
+    <div id="app">
+      <div class="settings">
+        <div class="cleff-select setting">
+          <div class="select-wrapper">
+            <label for="cleff">Cleff</label>
+            <select id="cleff">
+              <option value="grand">Grand Staff</option>
+              <option value="treble">Treble</option>
+              <option value="bass">Bass</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sound-select setting">
+          <div class="select-wrapper">
+            <label for="sound">Sound</label>
+            <select name="" id="sound">
+              <option value="piano">Piano</option>
+              <option value="e-piano">E-Piano</option>
+              <option value="sound-off">Sound Off</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="piano-size-select setting">
+          <div class="select-wrapper">
+            <label for="piano-size">Keys</label>
+            <select name="" id="piano-size">
+              <option value="88">88 Keys</option>
+              <option value="76">76 Keys</option>
+              <option value="61">61 Keys</option>
+              <option value="49">49 Keys</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="accidental-select setting">
+          <div class="select-wrapper">
+            <label for="accidentals">Accidentals</label>
+            <select name="" id="accidentals">
+              <option value="auto">Auto</option>
+              <option value="#">Sharp</option>
+              <option value="b">Flat</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="load-chords-xml setting">
+          <button id="load-chords-xml-btn">Load Chords XML</button>
+        </div>
+
+        <div class="logo">
+          <img src="/assets/logo.27d95a43.svg" alt="Chord Ace" />
+        </div>
+      </div>
+
+      <div class="info">
+        <p class="message">
+          Play your connected MIDI device or use your computer keyboard.
+        </p>
+        <div class="note-names"></div>
+        <div class="main-chord"></div>
+        <div class="other-chords"></div>
+      </div>
+      <div class="staff-wrapper">
+        <div class="staff"></div>
+      </div>
+
+      <div class="piano-wrapper">
+        <div id="piano"></div>
+      </div>
+    </div>
+
+    <div class="spinner-div">
+      <p>LOADING...</p>
+      <div class="spinner">
+        <div></div>
+        <div></div>
+      </div>
+      <p class="please-wait">PLEASE WAIT</p>
+    </div>
+    
+  </body>
+</html>
